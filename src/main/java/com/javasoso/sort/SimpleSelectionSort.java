@@ -32,9 +32,16 @@ public class SimpleSelectionSort implements Sort {
                     arr[j] = min;
                     min = a;
                 }
-//                System.out.println(String.format("第%d次：%s", ++n, Arrays.toString(arr)));
+                System.out.println(String.format("第%d次：%s", n, Arrays.toString(arr)));
             }
         }
         return n;
+    }
+
+    public static void main(String[] args) {
+        int arr [] = {4,3,2,1};
+        Sort sort = new SimpleSelectionSort();
+        sort.doSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

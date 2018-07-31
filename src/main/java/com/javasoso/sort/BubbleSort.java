@@ -32,17 +32,30 @@ public class BubbleSort implements Sort {
                 n++;
                 // 使用了两个缓存变量 是为了代码可读性。实际排序可只是用一个缓存变量 或不命名变量直接做交换
                 // 如：a b交换 a=a+b;b=a-b;a=a-b; 或 a^=b;b^=a;a^=b;
-                int a = arr[j];
-                int b = arr[j + 1];
-                // 如果前一个值比后一个值大，则交换
-                if (a > b) {
-                    arr[j] = b;
-                    arr[j + 1] = a;
+//                int a = arr[j];
+//                int b = arr[j + 1];
+//                // 如果前一个值比后一个值大，则交换
+//                if (a > b) {
+//                    arr[j] = b;
+//                    arr[j + 1] = a;
+//                }
+                if (arr[j] > arr[j + 1]){
+                    arr[j] = arr[j] + arr[j + 1];
+                    arr[j + 1] = arr[j] - arr[j + 1];
+                    arr[j] = arr[j] - arr[j + 1];
                 }
-//                System.out.println(String.format("第%d次：%s", ++n, Arrays.toString(arr)));
+                System.out.println(String.format("第%d次： %s", n, Arrays.toString(arr)));
             }
         }
         return n;
+    }
+
+
+    public static void main(String[] args) {
+        int arr [] = {4,3,2,1};
+        Sort sort = new BubbleSort();
+        sort.doSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
 }

@@ -9,31 +9,31 @@ import java.util.Random;
 public class SortRunner {
     public static void main(String[] args) {
         // 初始化无序数组
-        int[] arr = initArray(100000, 100000);
+        int[] arr = initArray(15000, 15000);
         System.out.println(Arrays.toString(arr));
         System.out.println("-----------------");
 
         // 初始化排序方式
         Sort sort = null;
 
-        // 冒泡排序
-        sort = new BubbleSort();
-        int[] arr1 = Arrays.copyOf(arr, arr.length);
-//        System.out.println(Arrays.toString(arr1));
-        // 执行排序
-        long t1 = sort(arr1, sort);
-//        System.out.println(Arrays.toString(arr1));
-        System.out.println("-----------------");
-
-        // 简单选择排序
-        sort = new SimpleSelectionSort();
-        int[] arr2 = Arrays.copyOf(arr, arr.length);
-//        System.out.println(Arrays.toString(arr2));
-        // 执行排序
-        long t2 = sort(arr2, sort);
-//        System.out.println(Arrays.toString(arr2));
-        System.out.println("-----------------");
-
+//        // 冒泡排序
+//        sort = new BubbleSort();
+//        int[] arr1 = Arrays.copyOf(arr, arr.length);
+////        System.out.println(Arrays.toString(arr1));
+//        // 执行排序
+//        long t1 = sort(arr1, sort);
+////        System.out.println(Arrays.toString(arr1));
+//        System.out.println("-----------------");
+//
+//        // 简单选择排序
+//        sort = new SimpleSelectionSort();
+//        int[] arr2 = Arrays.copyOf(arr, arr.length);
+////        System.out.println(Arrays.toString(arr2));
+//        // 执行排序
+//        long t2 = sort(arr2, sort);
+////        System.out.println(Arrays.toString(arr2));
+//        System.out.println("-----------------");
+//
         // 直接插入排序
         sort = new StraightInsertionSort();
         int[] arr3 = Arrays.copyOf(arr, arr.length);
@@ -42,6 +42,13 @@ public class SortRunner {
         long t3 = sort(arr3, sort);
 //        System.out.println(Arrays.toString(arr3));
 
+        // 希尔排序
+        sort = new ShellSort();
+        int[] arr4 = Arrays.copyOf(arr, arr.length);
+//        System.out.println(Arrays.toString(arr4));
+        // 执行排序
+        long t4 = sort(arr4, sort);
+//        System.out.println(Arrays.toString(arr4));
 
         System.out.println("数组长度：" + arr.length);
     }
